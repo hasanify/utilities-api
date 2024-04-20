@@ -8,7 +8,7 @@
     "tsc:watch": "npx tsc --watch",
     "dev": "nodemon",
     "start": "node .",
-    "precommit": "npm version patch && git add package.json"
+    "precommit": "npm version patch"
   },
   "_moduleAliases": {
     "@": "dist/"
