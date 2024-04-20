@@ -1,6 +1,6 @@
 {
   "name": "utilities-api",
-  "version": "2.0.0",
+  "version": "2.0.1",
   "description": "",
   "main": "dist/index.js",
   "scripts": {
@@ -8,7 +8,7 @@
     "tsc:watch": "npx tsc --watch",
     "dev": "nodemon",
     "start": "node .",
-    "precommit": "npm version patch"
+    "precommit": "npm version patch --no-git-tag-version && git add package.json"
   },
   "_moduleAliases": {
     "@": "dist/"
