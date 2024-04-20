@@ -1,7 +1,7 @@
-import { formatDistanceToNow } from "date-fns";
+import moment from "moment";
 
 export class TimeService {
-  public static getRelativeTime = (ms: string) => {
-    return formatDistanceToNow(new Date(ms));
+  public static getRelativeTime = (ts: string) => {
+    return moment(ts).fromNow(false);
   };
 }
