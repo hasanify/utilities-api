@@ -16,11 +16,13 @@ const attachRoutes = async (app: Application) => {
     });
 
     paths.forEach((p) => {
+      if (p === "index") p = "";
       const route = `/${utility}/${p}`;
       const module = path.join(__dirname, route);
       const router = require(module).default;
 
       app.use(route, router);
+
       const methods = router.stack.map((layer: any) => {
         if (layer.route) {
           return Object.keys(layer.route.methods)[0];
