@@ -17,7 +17,7 @@ COPY . .
 RUN npm run tsc:build
 
 # Second stage, production image
-FROM node:14-slim
+FROM node:20-slim
 
 WORKDIR /app
 
