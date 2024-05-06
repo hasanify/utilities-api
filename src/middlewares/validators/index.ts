@@ -1,3 +1,4 @@
+import cc from "currency-codes";
 import { NextFunction, Request, Response } from "express";
 import { ValidationChain, validationResult } from "express-validator";
 
@@ -8,10 +9,11 @@ const handleValidationErrors = (
 ) => {
   const errors = validationResult(req);
   if (!errors.isEmpty()) {
-    console.log(errors);
+    const msg: string = errors.array()[0].msg;
     return res.status(400).json({
       code: 400,
-      message: errors.array()[0].msg,
+      message: msg,
+      available_codes: msg.includes("invalid code") ? cc.codes() : undefined,
     });
   }
   next();
