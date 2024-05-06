@@ -4,6 +4,7 @@ import convert from "@/middlewares/validators/currency/convert";
 import { CurrencyRequest } from "@/types/currency";
 import * as cheerio from "cheerio";
 import express, { Response } from "express";
+const fetch = require("node-fetch2");
 
 const router = express.Router();
 
