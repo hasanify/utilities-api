@@ -9,7 +9,6 @@ COPY package*.json ./
 
 # Install dependencies
 RUN npm install
-RUN npx prisma generate
 
 # Copy rest of the source code
 COPY . .
